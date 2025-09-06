@@ -1,76 +1,17 @@
+import React from "react"
 import {Link} from "react-router-dom"
 export default function Vans(){
-    return(
-        <div>
-            <h2>Explore Our Vans Option</h2>
-            <div className="vans-links-container">
-                <Link className="link-option"to="/simple">Simple</Link>
-                <Link className="link-option" to="luxury">Luxury</Link>
-                <Link className="link-option" to="rugged">Rugged</Link>
-                <Link className="clear-option" to="/vans">Clear filters</Link>
-            </div>
-            <div className="Van-container">
-
-                <div className="van-option-container">
-                    <img src="./assets/images/van1-img.png" alt="" />
-                    <div className="van-option">
-                        <h4>Modest Explorer</h4>
-                        <p>$60<span>/day</span></p>
-                     </div>
-                      <Link to="/simple">Simple</Link>
-                </div>
-             
-                
-                <div className="van-option-container">
-                    <img src="./assets/images/van1-img.png" alt="" />
-                    <div className="van-option">
-                        <h4>Modest Explorer</h4>
-                        <p>$60<span>/day</span></p>
-                     </div>
-                     <Link to="/simple">Simple</Link>
-                </div>
-                
-                
-                <div className="van-option-container">
-                    <img src="./assets/images/van1-img.png" alt="" />
-                    <div className="van-option">
-                        <h4>Modest Explorer</h4>
-                        <p>$60<span>/day</span></p>
-                    </div>
-                    <Link to="/simple">Simple</Link>
-                </div>
-
-
-                <div className="van-option-container">
-                    <img src="./assets/images/van1-img.png" alt="" />
-                    <div className="van-option">
-                        <h4>Modest Explorer</h4>
-                        <p>$60<span>/day</span></p>
-                    </div>
-                    <Link to="/simple">Simple</Link>
-                </div>
-
-                <div className="van-option-container">
-                    <img src="./assets/images/van1-img.png" alt="" />
-                    <div className="van-option">
-                        <h4>Modest Explorer</h4>
-                        <p>$60<span>/day</span></p>
-                    </div>
-                    <Link to="/simple">Simple</Link>
-                </div>
-
-                <div className="van-option-container">
-                    <img src="./assets/images/van1-img.png" alt="" />
-                    <div className="van-option">
-                        <h4>Modest Explorer</h4>
-                        <p>$60<span>/day</span></p>
-                    </div>
-                    <Link to="/simple">Simple</Link>
-                </div>
-            </div>
-        </div>
+    
+        const [vansData,setvansData] = React.useState([])
         
-    )
+
+        React.useEffect(()=>{
+             fetch("/api/vans")
+             .then(res=>res.json())
+             .then(data=>console.log(data))
+        },[])
+
+ 
 }
 
 
